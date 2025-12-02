@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio (maksimczuk.com)
 
 Modernized version of the React portfolio rebuilt on the Next.js App Router. It pairs a reusable Material UI shell (navbar, dark theme, animated starfield) with client components for Profile, Projects, and the interactive Snake mini-game.
 
@@ -16,4 +16,4 @@ npm start       # serve .next output locally
 
 ## Deployment
 
-Uses Netlify
+Uses Vercel
