@@ -16,4 +16,4 @@ npm start       # serve .next output locally
 
 ## Deployment
 
-Uses Vercel
+Uses Netlify
