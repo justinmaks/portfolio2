@@ -12,8 +12,9 @@ const tiles: Tile[] = [
     text: 'EnvNow – Environment variable manager with Vault integration (Go)',
     url: 'https://github.com/justinmaks/envnow',
   },
-  { text: 'Linkly – Full-featured link shortening service with analytics (React)', url: 'https://linkly.devmaks.biz' },
-  { text: 'Free TV and Movie Streaming (Next.js)', url: 'https://strmnow.lol' }
+  { text: 'PPP – Public Plex Portal (Next.js)', url: 'https://stin.lol' },
+  { text: 'Strmnow - Free TV and Movie Streaming (Next.js)', url: 'https://strmnow.lol' },
+  { text: 'Linkly – Full-featured link shortening service with analytics (React)', url: 'https://linkly.devmaks.biz' }
 ];
 
 function Tile({ text, url }: Tile) {
