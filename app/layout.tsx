@@ -4,6 +4,7 @@ import './globals.css';
 import MuiProviders from '@/components/MuiProviders';
 import Navbar from '@/components/Navbar';
 import Starfield from '@/components/Starfield';
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -48,6 +49,7 @@ export default function RootLayout({
           <Navbar />
           <main className="app-content">{children}</main>
         </MuiProviders>
+        <Analytics />
       </body>
     </html>
   );
