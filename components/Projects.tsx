@@ -14,7 +14,7 @@ const tiles: Tile[] = [
   },
   { text: 'PPP – Public Plex Portal (Next.js)', url: 'https://stin.lol' },
   { text: 'Strmnow - Free TV and Movie Streaming (Next.js)', url: 'https://strmnow.lol' },
-  { text: 'Linkly – Full-featured link shortening service with analytics (React)', url: 'https://linkly.devmaks.biz' }
+  { text: 'Linkly – Full-featured link shortening service with analytics', url: 'https://stin.site' }
 ];
 
 function Tile({ text, url }: Tile) {
