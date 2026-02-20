@@ -27,10 +27,7 @@ export default function Tools() {
       sx={{ position: 'relative', zIndex: 1, mt: { xs: 4, md: 6 }, color: 'white', pb: 8 }}
     >
       <Typography variant="h4" component="h1" gutterBottom fontWeight={600}>
-        Dev Tools
-      </Typography>
-      <Typography variant="body2" color="text.secondary" gutterBottom>
-        Client-side utilities — nothing leaves your browser.
+        Tools
       </Typography>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3, mt: 2 }}>
