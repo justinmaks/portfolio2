@@ -14,8 +14,16 @@ const tiles: Tile[] = [
   },
   { text: 'PPP – Public Plex Portal (Next.js)', url: 'https://stin.lol' },
   { text: 'Strmnow - Free TV and Movie Streaming (Next.js)', url: 'https://strmnow.lol' },
-  { text: 'Linkly – Full-featured link shortening service with analytics', url: 'https://stin.site' }
+  {
+    text: 'phldata.xyz – Indego public bike and usage map (Philadelphia)',
+    url: 'https://phldata.xyz',
+  },
+  {
+    text: 'transit.phldata.xyz – SEPTA bus and rail live map (Philadelphia)',
+    url: 'https://transit.phldata.xyz',
+  },
 ];
+
 
 function Tile({ text, url }: Tile) {
   return (
