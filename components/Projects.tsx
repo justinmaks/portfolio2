@@ -13,7 +13,6 @@ const tiles: Tile[] = [
     url: 'https://github.com/justinmaks/envnow',
   },
   { text: 'PPP – Public Plex Portal (Next.js)', url: 'https://stin.lol' },
-  { text: 'Strmnow - Free TV and Movie Streaming (Next.js)', url: 'https://strmnow.lol' },
   {
     text: 'phldata.xyz – Indego public bike and usage map (Philadelphia)',
     url: 'https://phldata.xyz',
