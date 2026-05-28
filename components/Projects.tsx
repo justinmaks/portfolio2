@@ -12,6 +12,10 @@ const tiles: Tile[] = [
     text: 'EnvNow – Environment variable manager with Vault integration (Go)',
     url: 'https://github.com/justinmaks/envnow',
   },
+  {
+    text: 'jlts – Link shortener and tracking service',
+    url: 'https://link.stin.lol',
+  },
   { text: 'PPP – Public Plex Portal (Next.js)', url: 'https://stin.lol' },
   {
     text: 'phldata.xyz – Indego public bike and usage map (Philadelphia)',
