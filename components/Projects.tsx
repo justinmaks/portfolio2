@@ -1,4 +1,4 @@
-'use client';
+// 'use client';
 
 import { Box, Container, Link, Typography } from '@mui/material';
 
@@ -24,6 +24,18 @@ const tiles: Tile[] = [
   {
     text: 'transit.phldata.xyz – SEPTA bus and rail live map (Philadelphia)',
     url: 'https://transit.phldata.xyz',
+  },
+  {
+    text: 'EVE Tools Index – EVE Online 3rd-party tools indexer',
+    url: 'https://index.stin.win/',
+  },
+  {
+    text: 'EVE Gate Camp Checker – live gate camp tracker for EVE Online',
+    url: 'https://eve.stin.win/',
+  },
+  {
+    text: 'hedge-local – coding agent OTEL telemetry TUI',
+    url: 'https://github.com/justinmaks/hedge-local',
   },
 ];
 
