@@ -9,6 +9,10 @@ type Tile = {
 
 const tiles: Tile[] = [
   {
+    text: "hedge-local – coding agent OTEL telemetry TUI",
+    url: "https://github.com/justinmaks/hedge-local",
+  },
+  {
     text: "EnvNow – Environment variable manager with Vault integration (Go)",
     url: "https://github.com/justinmaks/envnow",
   },
@@ -32,10 +36,6 @@ const tiles: Tile[] = [
   {
     text: "EVE Gate Camp Checker – live gate camp tracker for EVE Online",
     url: "https://eve.stin.win",
-  },
-  {
-    text: "hedge-local – coding agent OTEL telemetry TUI",
-    url: "https://github.com/justinmaks/hedge-local",
   },
 ];
 
