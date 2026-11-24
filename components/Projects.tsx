@@ -54,14 +54,14 @@ function Tile({ text, url }: Tile) {
         borderRadius: 2,
         p: 2,
         textAlign: "center",
-        border: "1px solid rgba(255, 255, 255, 0.18)",
-        backgroundColor: "rgba(10, 12, 40, 0.45)",
+        border: "1px solid rgba(255, 255, 255, 0.12)",
+        backgroundColor: "rgba(255, 255, 255, 0.03)",
         backdropFilter: "blur(4px)",
         transition: "transform 150ms ease, border-color 150ms ease, background-color 150ms ease",
         "&:hover, &:focus-visible": {
           transform: "translateY(-4px)",
           borderColor: "primary.main",
-          backgroundColor: "rgba(20, 24, 70, 0.55)",
+          backgroundColor: "rgba(144, 202, 249, 0.06)",
         },
         "@media (prefers-reduced-motion: reduce)": {
           transition: "none",

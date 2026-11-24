@@ -13,7 +13,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import ChatIcon from '@mui/icons-material/Chat';
 import { useState } from 'react';
-import DecryptedText from '@/components/reactbits/DecryptedText';
 
 const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -120,24 +119,10 @@ export default function Profile() {
     >
       <Box>
         <Typography variant="h3" component="h1" gutterBottom>
-          <DecryptedText
-            text="Justin Maksimczuk"
-            animateOn="inViewHover"
-            sequential
-            revealDirection="start"
-            speed={45}
-            encryptedClassName="text-[#90caf9]"
-          />
+          Justin Maksimczuk
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          <DecryptedText
-            text="Software Engineer"
-            animateOn="view"
-            maxIterations={18}
-            speed={50}
-            effect="fade"
-            encryptedClassName="text-[#90caf9]"
-          />
+          Software Engineer
         </Typography>
 
         <Box sx={{
