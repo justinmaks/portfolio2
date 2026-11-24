@@ -83,8 +83,18 @@ export default function TimestampConverter() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
-      <Box display="flex" gap={1} alignItems="flex-start">
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1,
+          alignItems: "flex-start"
+        }}>
         <TextField
           label="Unix timestamp or date string"
           value={input}
@@ -98,7 +108,11 @@ export default function TimestampConverter() {
         />
       </Box>
 
-      <Box display="flex" gap={1}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1
+        }}>
         <Button variant="contained" onClick={convert} startIcon={<AccessTimeIcon />}>
           Convert
         </Button>
@@ -126,7 +140,9 @@ export default function TimestampConverter() {
               { label: 'Local', value: info.local },
             ].map(({ label, value }) => (
               <Grid size={12} key={label}>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" sx={{
+                  color: "text.secondary"
+                }}>
                   {label}
                 </Typography>
                 <Typography

@@ -107,7 +107,11 @@ export default function Snake() {
 
   if (isGameOver) {
     return (
-      <Box textAlign="center" color="white">
+      <Box
+        sx={{
+          textAlign: "center",
+          color: "white"
+        }}>
         <Typography variant="h4" gutterBottom>
           Highest Score: {highestScore}
         </Typography>
@@ -120,7 +124,11 @@ export default function Snake() {
   }
 
   return (
-    <Box textAlign="center" color="white">
+    <Box
+      sx={{
+        textAlign: "center",
+        color: "white"
+      }}>
       <Typography variant="h4" gutterBottom>
         Highest Score: {highestScore}
       </Typography>
@@ -128,17 +136,19 @@ export default function Snake() {
         Score: {score}
       </Typography>
       <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        minHeight="60vh"
-        mt={4}
-      >
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "60vh",
+          mt: 4
+        }}>
         <Box
-          display="grid"
-          gridTemplateColumns={`repeat(${numCols}, ${cellSize}px)`}
-          gap={0.5}
-        >
+          sx={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${numCols}, ${cellSize}px)`,
+            gap: 0.5
+          }}>
           {gridCells.map((_, index) => {
             const x = index % numCols;
             const y = Math.floor(index / numCols);
@@ -147,13 +157,12 @@ export default function Snake() {
             return (
               <Box
                 key={`${x}-${y}`}
-                width={cellSize}
-                height={cellSize}
                 sx={{
+                  width: cellSize,
+                  height: cellSize,
                   backgroundColor: isSnakePart ? 'green' : isFood ? 'red' : 'rgba(255,255,255,0.1)',
-                  border: '1px solid rgba(255,255,255,0.2)',
-                }}
-              />
+                  border: '1px solid rgba(255,255,255,0.2)'
+                }} />
             );
           })}
         </Box>

@@ -42,23 +42,22 @@ const tiles: Tile[] = [
 function Tile({ text, url }: Tile) {
   return (
     <Box
-      // border={1}
-      borderRadius={2}
-      p={2}
-      textAlign="center"
-      width="100%"
       sx={{
+        borderRadius: 2,
+        p: 2,
+        textAlign: "center",
+        width: "100%",
         cursor: "pointer",
         borderColor: "rgba(255, 255, 255, 0.25)",
         borderWidth: 2,
         backgroundColor: "rgba(51, 51, 51, 0.2)",
         transition: "transform 150ms ease, border-color 150ms ease",
+
         "&:hover": {
           transform: "translateY(-4px)",
           borderColor: "primary.main",
-        },
-      }}
-    >
+        }
+      }}>
       <Link
         href={url}
         target="_blank"

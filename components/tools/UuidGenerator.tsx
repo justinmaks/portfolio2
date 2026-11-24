@@ -52,7 +52,12 @@ export default function UuidGenerator() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
       <Box>
         <Typography gutterBottom>
           Count: <strong>{count}</strong>
@@ -67,7 +72,11 @@ export default function UuidGenerator() {
         />
       </Box>
 
-      <Box display="flex" gap={1}>
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1
+        }}>
         <Button variant="contained" startIcon={<RefreshIcon />} onClick={generate}>
           Generate
         </Button>

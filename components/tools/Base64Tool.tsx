@@ -52,8 +52,18 @@ export default function Base64Tool() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
-      <Box display="flex" alignItems="center" gap={2}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: 2
+        }}>
         <ToggleButtonGroup
           value={mode}
           exclusive
@@ -89,7 +99,9 @@ export default function Base64Tool() {
       {error && <Alert severity="error">{error}</Alert>}
 
       {output && (
-        <Box position="relative">
+        <Box sx={{
+          position: "relative"
+        }}>
           <TextField
             label="Output"
             multiline

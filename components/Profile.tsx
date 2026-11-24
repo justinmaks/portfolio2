@@ -125,7 +125,9 @@ export default function Profile() {
           Software Engineer
         </Typography>
 
-        <Box mt={3}>
+        <Box sx={{
+          mt: 3
+        }}>
           <a
             href="https://www.linkedin.com/in/justin-maksimczuk"
             target="_blank"
@@ -205,7 +207,9 @@ export default function Profile() {
           </Popover>
         </Box>
 
-        <Box mt={2}>
+        <Box sx={{
+          mt: 2
+        }}>
           <Button variant="contained" color="primary" onClick={togglePGPKey}>
             {showPGPKey ? 'Hide PGP Key' : 'Show PGP Key'}
           </Button>
@@ -213,9 +217,9 @@ export default function Profile() {
 
         {showPGPKey && (
           <Box
-            mt={4}
             component="pre"
             sx={{
+              mt: 4,
               textAlign: 'left',
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
               color: 'white',
@@ -225,9 +229,8 @@ export default function Profile() {
               wordBreak: 'break-word',
               overflow: 'auto',
               maxHeight: '55vh',
-              fontSize: '12px',
-            }}
-          >
+              fontSize: '12px'
+            }}>
             {pgpKey}
           </Box>
         )}

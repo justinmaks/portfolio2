@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import MuiProviders from '@/components/MuiProviders';
 import Navbar from '@/components/Navbar';
 import Starfield from '@/components/Starfield';
@@ -43,12 +44,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <MuiProviders>
-          <div id="background" aria-hidden />
-          <Starfield />
-          <Navbar />
-          <main className="app-content">{children}</main>
-        </MuiProviders>
+        <AppRouterCacheProvider>
+          <MuiProviders>
+            <div id="background" aria-hidden />
+            <Starfield />
+            <Navbar />
+            <main className="app-content">{children}</main>
+          </MuiProviders>
+        </AppRouterCacheProvider>
         <Analytics />
       </body>
     </html>

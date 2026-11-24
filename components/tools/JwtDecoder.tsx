@@ -31,6 +31,7 @@ interface DecodedJwt {
   header: Record<string, unknown>;
   payload: Record<string, unknown>;
   signature: string;
+  expired: boolean;
 }
 
 export default function JwtDecoder() {
@@ -49,7 +50,8 @@ export default function JwtDecoder() {
     try {
       const header = JSON.parse(base64UrlDecode(parts[0]));
       const payload = JSON.parse(base64UrlDecode(parts[1]));
-      setDecoded({ header, payload, signature: parts[2] });
+      const expired = typeof payload.exp === 'number' && Date.now() / 1000 > payload.exp;
+      setDecoded({ header, payload, signature: parts[2], expired });
     } catch {
       setError('Failed to decode JWT — check that it is well-formed.');
     }
@@ -60,15 +62,15 @@ export default function JwtDecoder() {
     return new Date(ts * 1000).toUTCString();
   };
 
-  const isExpired = () => {
-    if (!decoded) return false;
-    const exp = decoded.payload.exp;
-    if (typeof exp !== 'number') return false;
-    return Date.now() / 1000 > exp;
-  };
+  const isExpired = () => decoded?.expired ?? false;
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
       <TextField
         label="Paste JWT token"
         multiline
@@ -86,7 +88,12 @@ export default function JwtDecoder() {
       {error && <Alert severity="error">{error}</Alert>}
 
       {decoded && (
-        <Box display="flex" flexDirection="column" gap={2}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2
+          }}>
           {isExpired() && (
             <Alert severity="warning">Token is expired.</Alert>
           )}
@@ -131,7 +138,13 @@ export default function JwtDecoder() {
             >
               {JSON.stringify(decoded.payload, null, 2)}
             </Box>
-            <Box display="flex" flexWrap="wrap" gap={1} mt={1}>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 1,
+                mt: 1
+              }}>
               {typeof decoded.payload.iat === 'number' && (
                 <Chip label={`iat: ${formatTime(decoded.payload.iat)}`} size="small" variant="outlined" />
               )}
@@ -148,7 +161,9 @@ export default function JwtDecoder() {
 
           <Box>
             <Typography variant="subtitle2" color="primary" gutterBottom>
-              SIGNATURE <Typography component="span" variant="caption" color="text.secondary">(not verified)</Typography>
+              SIGNATURE <Typography component="span" variant="caption" sx={{
+              color: "text.secondary"
+            }}>(not verified)</Typography>
             </Typography>
             <Box
               sx={{
