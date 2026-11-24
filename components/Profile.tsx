@@ -13,6 +13,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import ChatIcon from '@mui/icons-material/Chat';
 import { useState } from 'react';
+import DecryptedText from '@/components/reactbits/DecryptedText';
 
 const pgpKey = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -119,42 +120,64 @@ export default function Profile() {
     >
       <Box>
         <Typography variant="h3" component="h1" gutterBottom>
-          Justin Maksimczuk
+          <DecryptedText
+            text="Justin Maksimczuk"
+            animateOn="inViewHover"
+            sequential
+            revealDirection="start"
+            speed={45}
+            encryptedClassName="text-[#90caf9]"
+          />
         </Typography>
         <Typography variant="h5" component="h2" gutterBottom>
-          Software Engineer
+          <DecryptedText
+            text="Software Engineer"
+            animateOn="view"
+            maxIterations={18}
+            speed={50}
+            effect="fade"
+            encryptedClassName="text-[#90caf9]"
+          />
         </Typography>
 
         <Box sx={{
           mt: 3
         }}>
-          <a
+          <IconButton
+            component="a"
+            nativeButton={false}
             href="https://www.linkedin.com/in/justin-maksimczuk"
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
+            color="primary"
           >
-            <IconButton aria-label="LinkedIn" color="primary">
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-          </a>
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
 
-          <a href="https://github.com/justinmaks" target="_blank" rel="noreferrer">
-            <IconButton aria-label="GitHub" color="primary">
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-          </a>
-
-          <a
-            href="mailto:justin@maksimczuk.com"
+          <IconButton
+            component="a"
+            nativeButton={false}
+            href="https://github.com/justinmaks"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
+            color="primary"
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+
+          <IconButton
+            component="a"
+            nativeButton={false}
+            href="mailto:justin@maksimczuk.com"
             onMouseEnter={handleEmailPopoverOpen}
             onMouseLeave={handleEmailPopoverClose}
+            aria-label="Email justin@maksimczuk.com"
+            color="primary"
           >
-            <IconButton aria-label="Email" color="primary">
-              <EmailIcon fontSize="large" />
-            </IconButton>
-          </a>
+            <EmailIcon fontSize="large" />
+          </IconButton>
 
           <Popover
             id="email-popover"

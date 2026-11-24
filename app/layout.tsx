@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v16-appRouter';
 import MuiProviders from '@/components/MuiProviders';
 import Navbar from '@/components/Navbar';
-import Starfield from '@/components/Starfield';
+import GalaxyBackground from '@/components/GalaxyBackground';
 import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
@@ -36,6 +36,11 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 };
 
+export const viewport: Viewport = {
+  themeColor: '#000014',
+  colorScheme: 'dark',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -47,7 +52,7 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <MuiProviders>
             <div id="background" aria-hidden />
-            <Starfield />
+            <GalaxyBackground />
             <Navbar />
             <main className="app-content">{children}</main>
           </MuiProviders>

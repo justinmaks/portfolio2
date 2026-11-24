@@ -1,6 +1,6 @@
 // 'use client';
 
-import { Box, Container, Grid, Link, Typography } from "@mui/material";
+import { Container, Grid, Link, Typography } from "@mui/material";
 
 type Tile = {
   text: string;
@@ -41,34 +41,38 @@ const tiles: Tile[] = [
 
 function Tile({ text, url }: Tile) {
   return (
-    <Box
+    <Link
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      underline="none"
       sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
         borderRadius: 2,
         p: 2,
         textAlign: "center",
-        width: "100%",
-        cursor: "pointer",
-        borderColor: "rgba(255, 255, 255, 0.25)",
-        borderWidth: 2,
-        backgroundColor: "rgba(51, 51, 51, 0.2)",
-        transition: "transform 150ms ease, border-color 150ms ease",
-
-        "&:hover": {
+        border: "1px solid rgba(255, 255, 255, 0.18)",
+        backgroundColor: "rgba(10, 12, 40, 0.45)",
+        backdropFilter: "blur(4px)",
+        transition: "transform 150ms ease, border-color 150ms ease, background-color 150ms ease",
+        "&:hover, &:focus-visible": {
           transform: "translateY(-4px)",
           borderColor: "primary.main",
-        }
-      }}>
-      <Link
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-        underline="none"
-      >
-        <Typography variant="h6" color="white">
-          {text}
-        </Typography>
-      </Link>
-    </Box>
+          backgroundColor: "rgba(20, 24, 70, 0.55)",
+        },
+        "@media (prefers-reduced-motion: reduce)": {
+          transition: "none",
+          "&:hover, &:focus-visible": { transform: "none" },
+        },
+      }}
+    >
+      <Typography variant="h6" component="span" sx={{ color: "white" }}>
+        {text}
+      </Typography>
+    </Link>
   );
 }
 
