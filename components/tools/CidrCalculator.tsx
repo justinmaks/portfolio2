@@ -6,7 +6,6 @@ import {
   Button,
   TextField,
   Typography,
-  Alert,
   Grid,
   Divider,
   Chip,
@@ -104,7 +103,12 @@ export default function CidrCalculator() {
     : [];
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
       <TextField
         label="CIDR block"
         value={input}
@@ -117,7 +121,12 @@ export default function CidrCalculator() {
         onKeyDown={(e) => e.key === 'Enter' && calc()}
       />
 
-      <Box display="flex" gap={1} flexWrap="wrap">
+      <Box
+        sx={{
+          display: "flex",
+          gap: 1,
+          flexWrap: "wrap"
+        }}>
         <Button variant="contained" startIcon={<NetworkCheckIcon />} onClick={calc}>
           Calculate
         </Button>
@@ -138,8 +147,16 @@ export default function CidrCalculator() {
           <Grid container spacing={1}>
             {rows.map(({ label, value }, i) => (
               <Grid size={12} key={label}>
-                <Box display="flex" justifyContent="space-between" alignItems="center" py={0.5}>
-                  <Typography variant="caption" color="text.secondary">
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    py: 0.5
+                  }}>
+                  <Typography variant="caption" sx={{
+                    color: "text.secondary"
+                  }}>
                     {label}
                   </Typography>
                   <Typography

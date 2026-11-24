@@ -22,11 +22,16 @@ export default function Navbar() {
       sx={{ backgroundImage: 'none', pt: 2 }}
     >
       <Toolbar sx={{ justifyContent: 'center' }}>
-        <Box display="flex" gap={1}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 1
+          }}>
           {navLinks.map((link) => (
             <Button
               key={link.href}
               component={Link}
+              nativeButton={false}
               href={link.href}
               color="inherit"
               sx={{

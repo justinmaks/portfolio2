@@ -125,34 +125,44 @@ export default function Profile() {
           Software Engineer
         </Typography>
 
-        <Box mt={3}>
-          <a
+        <Box sx={{
+          mt: 3
+        }}>
+          <IconButton
+            component="a"
+            nativeButton={false}
             href="https://www.linkedin.com/in/justin-maksimczuk"
             target="_blank"
             rel="noreferrer"
+            aria-label="LinkedIn"
+            color="primary"
           >
-            <IconButton aria-label="LinkedIn" color="primary">
-              <LinkedInIcon fontSize="large" />
-            </IconButton>
-          </a>
+            <LinkedInIcon fontSize="large" />
+          </IconButton>
 
-          <a href="https://github.com/justinmaks" target="_blank" rel="noreferrer">
-            <IconButton aria-label="GitHub" color="primary">
-              <GitHubIcon fontSize="large" />
-            </IconButton>
-          </a>
-
-          <a
-            href="mailto:justin@maksimczuk.com"
+          <IconButton
+            component="a"
+            nativeButton={false}
+            href="https://github.com/justinmaks"
             target="_blank"
             rel="noreferrer"
+            aria-label="GitHub"
+            color="primary"
+          >
+            <GitHubIcon fontSize="large" />
+          </IconButton>
+
+          <IconButton
+            component="a"
+            nativeButton={false}
+            href="mailto:justin@maksimczuk.com"
             onMouseEnter={handleEmailPopoverOpen}
             onMouseLeave={handleEmailPopoverClose}
+            aria-label="Email justin@maksimczuk.com"
+            color="primary"
           >
-            <IconButton aria-label="Email" color="primary">
-              <EmailIcon fontSize="large" />
-            </IconButton>
-          </a>
+            <EmailIcon fontSize="large" />
+          </IconButton>
 
           <Popover
             id="email-popover"
@@ -205,7 +215,9 @@ export default function Profile() {
           </Popover>
         </Box>
 
-        <Box mt={2}>
+        <Box sx={{
+          mt: 2
+        }}>
           <Button variant="contained" color="primary" onClick={togglePGPKey}>
             {showPGPKey ? 'Hide PGP Key' : 'Show PGP Key'}
           </Button>
@@ -213,9 +225,9 @@ export default function Profile() {
 
         {showPGPKey && (
           <Box
-            mt={4}
             component="pre"
             sx={{
+              mt: 4,
               textAlign: 'left',
               backgroundColor: 'rgba(0, 0, 0, 0.7)',
               color: 'white',
@@ -225,9 +237,8 @@ export default function Profile() {
               wordBreak: 'break-word',
               overflow: 'auto',
               maxHeight: '55vh',
-              fontSize: '12px',
-            }}
-          >
+              fontSize: '12px'
+            }}>
             {pgpKey}
           </Box>
         )}

@@ -41,7 +41,12 @@ export default function JsonFormatter() {
   };
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 2
+      }}>
       <TextField
         label="JSON input"
         multiline
@@ -64,7 +69,9 @@ export default function JsonFormatter() {
       {error && <Alert severity="error" sx={{ whiteSpace: 'pre-wrap', fontFamily: 'var(--font-geist-mono)', fontSize: 12 }}>{error}</Alert>}
 
       {output && (
-        <Box position="relative">
+        <Box sx={{
+          position: "relative"
+        }}>
           <TextField
             label="Output"
             multiline

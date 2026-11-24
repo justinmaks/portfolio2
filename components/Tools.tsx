@@ -26,7 +26,9 @@ export default function Tools() {
       maxWidth="md"
       sx={{ position: 'relative', zIndex: 1, mt: { xs: 4, md: 6 }, color: 'white', pb: 8 }}
     >
-      <Typography variant="h4" component="h1" gutterBottom fontWeight={600}>
+      <Typography variant="h4" component="h1" gutterBottom sx={{
+        fontWeight: 600
+      }}>
         Tools
       </Typography>
 
